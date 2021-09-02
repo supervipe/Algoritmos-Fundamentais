@@ -8,7 +8,6 @@ defmodule Inversion do
 
   def of(x, inv, digito) do
     unless x <= 0 do
-      IO.puts("ENTROU")
       digito = rem(x, 10)
       inv = inv * 10 + digito
       x = trunc(x/10)

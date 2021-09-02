@@ -9,16 +9,16 @@ defmodule Fibonacci do
 
   def of(a, b, i, x) do
     unless i >= x do
-      IO.puts("#{a}, #{b}, ")
+      IO.write("#{a}, #{b}, ")
       a = a + b
       b = a + b
       i = i + 2
       of(a, b, i, x)
     else
       unless i <= x do
-        IO.puts("#{a}")
+        IO.write("#{a}")
       else
-        IO.puts("#{a}, #{b}, ")
+        IO.write("#{a}, #{b}, ")
       end
     end
 

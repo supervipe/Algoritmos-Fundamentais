@@ -10,21 +10,16 @@ defmodule Conversion do
   def of(r, res, digito, x) do
     unless x == 0 do
       r = rem(x, 2)
-      List.insert_at(res,digito,r)
-      IO.puts(["r  ",Enum.join(res, " ")])
+      res = res ++ [r]
+
       digito = digito + 1
       x = trunc(x / 2)
-      # of(r, res, digito, x)
+      of(r, res, digito, x)
     else
-      y = digito - 1
-      unless y <= 0  do
-        z = Enum.fetch(res, y)
-        IO.puts(z)
-        y--
-        of(r, res, digito, x)
-      end
+      res = Enum.reverse(res)
+      IO.inspect res, label: "The list is"
     end
   end
 end
 
-IO.puts("O valor eh 157 e o inverso eh #{Conversion.of(157)}")
+Conversion.of(233)
